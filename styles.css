@@ -1,0 +1,394 @@
+* {
+    box-sizing: border-box;
+    background: palegoldenrod;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.everything {
+    margin: 0 auto;
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    justify-content: center;
+}
+
+header {
+    width: 500px;
+    margin: 0 auto;
+    text-align: left;
+    font-size: 1.2rem;
+    border-bottom: 2px double black;
+}
+
+header button {
+    position: relative;
+    left: 30%;
+    top: 5%;
+    height: 50%;
+    width: 20%;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 0 5px 1px black;
+    background-color: white;
+}
+header button:hover {
+    background-color: yellow;
+    transition: all 0.5s linear;
+    cursor: pointer;
+}
+
+header span {
+    font-size: 0.8rem;
+    font-style: italic;
+}
+#message-box {
+    width: 330px;
+    height: 2rem;
+    text-align: center;
+    font-size: 1.5rem;
+    border-radius: 10%;
+    background-color: lightgrey;
+    position: absolute;
+    top: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dictionary {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 8%;
+    width: 90vw;
+    height: 90vh;
+    border: 2px solid black;
+    margin: 0 auto;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: scroll;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.dictionary-image {
+    width: 100%;
+    max-width: 160px;
+    height: 55px;
+    font-size: 1.5rem;
+    border: 1px solid black;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    background-color: palegoldenrod;
+}
+.dictionary-image div {
+    background-color: transparent;
+}
+.dictionary button {
+    position: absolute;
+    right: 0%;
+    width: 30px;
+    height: 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: 1px solid black;
+    border-radius: 10px;
+    overflow: visible;
+}
+.dictionary button:hover {
+    background-color: yellow;
+    transition: all 0.5s linear;
+}
+
+
+.reset-box {
+    position: absolute;
+    border: 2px solid black;
+    background-color: rgb(243, 243, 231);;
+    font-size: 2rem;
+    width: 30%;
+    height: 40vh;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    /*display: flex;
+    flex-wrap: wrap;*/
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 2px 2px dimgray;
+}
+
+.reset-box button {
+    height: 3rem;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: lightgreen;
+    box-shadow: 0 0 1px 1px black;
+    border-radius: 10px;
+    font-size: 2rem;
+    margin-top: 15px;
+}
+.reset-box div {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    border-radius: 10px;
+    background-color: transparent;
+}
+#change-btn {
+    display: block;
+}
+#end-image {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.reset-box div img {
+    width: 120px;
+    height: 80px;
+    border-radius: 10px;
+    align-items: center;
+}
+.upper-container {
+    width: 100%;
+    height: 60%;
+    max-height: 380px;
+    margin-top: auto;
+    margin-bottom: auto;
+    display: flex;
+    justify-content: center;
+}
+.lower-container {
+    width: 100%;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+.upper-inner-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    width: 510px;
+    height: 100%;
+}
+
+.game-select-window {
+    position:absolute;
+    top:35%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    height: 40vh;
+    width: 40vw;
+    box-shadow: 2px 2px 1px 2px black;
+    background-color: lightblue;
+    border-radius: 5px;
+}
+.game-select-text {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    background-color: transparent;
+}
+.game-select-text span {
+    background-color: transparent;
+}
+.game-select-button-container {
+    width: 100%;
+    height: 60%;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    background-color: transparent;
+    gap: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+}
+.game-select-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 1px 1px 2px black;
+    border-radius: 10px;
+    font-size: 2rem;
+    background-color: palegoldenrod;
+}
+.game-select {
+    background-color: transparent;
+}
+.answer-box-container {
+    width: 50vw;
+    height: 100%;
+    max-height: 410px;
+    justify-content: center;
+    gap: 1px;
+    
+}
+.answer-image-container {
+    width: 120px;
+    height: 100%;
+    max-height: 410px;
+    margin-left: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1px;
+}
+.answer-image {
+    width: 80px;
+    height: 60px;
+    border-radius: 5px;
+}
+.answer-image img {
+    width: 100%;
+    height: 100%;
+}
+.answer-input {
+    width: 100%;
+    height: 60px;
+    display: grid;
+    grid-template-columns: repeat(6,1fr)
+}
+
+.answer-box {
+    height: 60px;
+    width: 90%;
+    border: 1px solid grey;
+    border-radius: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    transition: all 0.5s linear;
+}
+
+
+.keyboard {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 500px;
+    height: 100%;
+    justify-content: center;
+    gap: 4px;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.key {
+    width: 9%;
+    height: 30%;
+    font-size: 30px;
+    border-radius: 15%;
+    border: none;
+    box-shadow: 1px 1px 2px 1px black;
+    transition: all 0.1s linear;
+    background-color: lightblue;
+}
+.actionkey {
+    width: 13%;
+    height: 30%;
+    font-size: 20px;
+    border-radius: 15%;
+    border: none;
+    box-shadow: 1px 1px 2px 1px black;
+    text-align: center;
+    transition: all 0.1s linear;
+    background-color: lightgreen;
+    
+}
+.hide-me {
+    display: none;
+}
+
+.go-transparent {
+    opacity: 50%;
+}
+
+@media (max-width:800px) {
+    .everything {
+        width: 360px;
+    }
+    .dictionary {
+    width: 360px;
+    height: 500px;
+    }
+    .dictionary-image {
+        max-width: 90px;
+        height: 30px;
+        font-size: 1rem;
+    }
+    .dictionary-image img {
+        height: 25px;
+        width: 35px;
+    }
+    header {
+        width: 350px;
+    }
+    header button {
+        left: 20%;
+    }
+    .reset-box {
+        width: 300px;
+    }
+    .answer-box-container {
+        width: 280px;
+    }
+    .upper-container {
+        max-height: 360px;
+    }
+    .lower-container {
+        margin-bottom: 0;
+        height: 160px;
+    }
+    .keyboard {
+        width: 350px;
+        margin-top: 2px;
+        gap: 3px;
+    }
+    .key {
+        font-size: 24px;
+    }
+    .answer-image-container {
+        width: 80px;
+        margin-left: 5px;
+    }
+}
+@media (min-width: 1200px) {
+    .dictionary {
+        width: 1180px;
+    }
+}
+@media (min-width: 1600px) {
+    .dictionary {
+        width: 1550px;
+    }
+}
+.dictionary-close {
+    height: 0px;
+    border: none;
+}
+.behind {
+    z-index: -10;
+    display: none;
+}
