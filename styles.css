@@ -1,7 +1,6 @@
 * {
     box-sizing: border-box;
-    background: palegoldenrod;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
@@ -18,10 +17,12 @@ body {
     flex-direction: column;
     align-content: space-between;
     justify-content: center;
+    background: lightgray;
 }
 
 header {
-    width: 500px;
+    width: 45vw;
+    height: 8vh;
     margin: 0 auto;
     text-align: left;
     font-size: 1.2rem;
@@ -56,10 +57,11 @@ header span {
     height: 2rem;
     text-align: center;
     font-size: 1.5rem;
-    border-radius: 10%;
-    background-color: lightgrey;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
     position: absolute;
-    top: 2%;
+    top: 15%;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -79,7 +81,7 @@ header span {
     justify-content: center;
     overflow: scroll;
     border-radius: 10px;
-    background-color: white;
+    background-color: lightgray;
 }
 
 .dictionary-image {
@@ -93,7 +95,7 @@ header span {
     flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
-    background-color: palegoldenrod;
+    background-color: white;
 }
 .dictionary-image div {
     background-color: transparent;
@@ -126,8 +128,6 @@ header span {
     left: 50%;
     transform: translateX(-50%);
     border-radius: 10px;
-    /*display: flex;
-    flex-wrap: wrap;*/
     justify-content: center;
     align-items: center;
     box-shadow: 1px 2px 2px dimgray;
@@ -138,7 +138,7 @@ header span {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    background-color: lightgreen;
+    background-color: palegreen;
     box-shadow: 0 0 1px 1px black;
     border-radius: 10px;
     font-size: 2rem;
@@ -167,7 +167,7 @@ header span {
 }
 .upper-container {
     width: 100%;
-    height: 60%;
+    height: 60vh;
     max-height: 380px;
     margin-top: auto;
     margin-bottom: auto;
@@ -176,7 +176,7 @@ header span {
 }
 .lower-container {
     width: 100%;
-    height: 180px;
+    height: 30vh;
     display: flex;
     justify-content: center;
     margin-bottom: 15px;
@@ -230,7 +230,7 @@ header span {
     box-shadow: 2px 1px 1px 2px black;
     border-radius: 10px;
     font-size: 2rem;
-    background-color: palegoldenrod;
+    background-color: lightgreen;
 }
 .game-select {
     background-color: transparent;
@@ -253,27 +253,19 @@ header span {
     justify-content: center;
     gap: 1px;
 }
-.answer-image {
-    width: 80px;
-    height: 60px;
-    border-radius: 5px;
-}
-.answer-image img {
-    width: 100%;
-    height: 100%;
-}
 .answer-input {
     width: 100%;
     height: 60px;
     display: grid;
-    grid-template-columns: repeat(6,1fr)
+    grid-template-columns: repeat(6,1fr);
+    margin-bottom: 3px;
 }
 
 .answer-box {
     height: 60px;
     width: 90%;
-    border: 1px solid grey;
-    border-radius: 10%;
+    box-shadow: 1px 1px 2px 1px black;
+    border-radius: 5px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -287,12 +279,12 @@ header span {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 500px;
+    width: 50vw;
     height: 100%;
     justify-content: center;
     gap: 4px;
     text-align: center;
-    margin-top: 5px;
+    margin-top: 3px;
 }
 
 .key {

@@ -429,6 +429,7 @@ function resetGame() {
     answerBox2 = answerInput.children[2]
     answerBox3 = answerInput.children[3]
     answerBox4 = answerInput.children[4]
+    answerBox5 = answerInput.children[5]
     let imageBoxes = document.querySelectorAll(".answer-image")
     imageBoxes.forEach( (x) => {
         x.textContent = ""
