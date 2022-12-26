@@ -1,5 +1,5 @@
 const jshWords = ["able","about","above","abroad","absent","across","action","active","actor","add",
-"adult","affect","afraid","africa","after","ago","agree","air","all","allow","almost","alone","along","also","among","amount",
+"adult","affect","afraid","africa","after","ago","agree","air","alive","all","allow","almost","alone","along","also","among","amount",
 "angel","angry","ankle","answer","ant","any","anyone","apron","area","arena","arm","army","around","arrive","asia",
 "ask","asleep","atomic","attack","aunt","aurora","award","away","baby","back","bacon","bad","bake","bamboo","bang",
 "bank","barber","barrel","basket","bath","beak","bean","beast","beat","beaver","became","become","bed","bee","beef",
@@ -81,10 +81,30 @@ const jhsVerbList = ["cut","hit","hurt","let","put","read","set","beat","beaten"
 "swum","take","took","taken","taking","throw","threw","thrown","wake","woke","woken","waking","wear","wore","worn",
 "write","wrote"]
 
-const combine = jshWords.concat(jhsVerbList)
+const esWords = ["buy","clean","cook","dance","drink","enjoy","get","have","join","jump","leave","like","live","look",
+"make","meet","play","pull","put","read","ride","run","see","sing","sit","speak","stand","stop","study","swim","take",
+"thank","think","try","turn","visit","walk","want","wash","watch","ate","saw","went","best","big","cold","cool","famous",
+"fast","fun","hard","high","hot","long","many","new","nice","old","salty","short","small","soft","sour","strong","sweet",
+"busy","cute","fine","good","great","happy","hungry","kind","sad","sorry","tired","egg","fish","food","fruit","pizza",
+"salad","steak","apple","banana","cherry","grape","lemon","melon","orange","peach","corn","potato","tomato","cake","jam",
+"coffee","juice","milk","soda","water","soup","tea","one","two","three","four","five","six","seven","eight","nine","ten",
+"eleven","twelve","twenty","thirty","forty","fifty","sixty","eighty","ninety","first","second","third","fourth","fifth",
+"sixth","eigth","ninth","tenth","math","music","gym","school","ink","letter","pen","pencil","ruler","house","menu","park",
+"police","shrine","street","temple","town","zoo","bus","jet","artist","baker","cook","doctor","farmer","hero","nurse",
+"pilot","queen","singer","vet","bath","bed","book","box","chair","cup","desk","dish","home","table","bag","cap","glove",
+"hat","watch","piano","lunch","rugby","soccer","tennis","bat","sport","team","color","black","blue","brown","green","orange",
+"purple","red","white","yellow","star","spring","summer","autumn","fall","winter","march","april","may","june","july",
+"august","sunday","monday","friday","time","day","year","brazil","canada","china","egypt","france","india","italy","japan",
+"korea","peru","russia","spain","animal","bear","cat","cow","dog","horse","monkey","panda","pig","rabbit","sheep","snake",
+"tiger","dragon","flower","tree","beach","lake","river","sea","sun","cloudy","rainy","snowy","sunny","nature","hiking",
+"ball","card","game","you","your","our","she","boy","girl","father","mother","sister","friend","ear","eye","face","hand",
+"head","face","nose","dream","future","hint","memory","name","place","world","news","left","right","the","are","was","that",
+"this","can","would","around","for","from","under","again","always","away","down","here","much","never","not","off","very",
+"well","how","what","when","where","who","why","but","hello","yes","please","age"]
+
+const combine = jshWords.concat(jhsVerbList).concat(esWords)
 const fullList = new Set([...combine])
 const finalArr = Array.from(fullList)
-
 const jhsWords3 = finalArr.filter(word => word.length === 3 )
 const jhsWords4 = finalArr.filter(word => word.length === 4 )
 const jhsWords5 = finalArr.filter(word => word.length === 5 )
@@ -95,7 +115,7 @@ const gameTypeObj = {
     4: jhsWords4,
     5: jhsWords5,
     6: jhsWords6
-}
+}   
 
 let word = ""
 let randomSelect = "" 
@@ -178,7 +198,6 @@ function renderGame(type){
 function start(arr) {
     randomSelect = Math.floor( Math.random()*arr.length )
     word = arr[randomSelect]
-    console.log(word)
     answerArr = word.split("")
     answerCount = 0
     round = 0
@@ -228,22 +247,22 @@ allKeys.forEach( (x) => {
 
 window.addEventListener("keydown", (x) => {
     if (gameActive) {
-    if (x.key === "Enter") {
-        blockDictionary = true
-        checkGuess()
-    } else if (x.key === "Backspace") {
-        del()
-    } else {
-    if ( /[a-z]/.test(x.key) && x.key.length === 1) {
-        press(x.key)
+        if (x.key === "Enter") {
+            blockDictionary = true
+            checkGuess()
+        } else if (x.key === "Backspace") {
+            del()
+        } else {
+        if ( /[a-z]/.test(x.key) && x.key.length === 1) {
+            press(x.key)
+        }
+        }
+        } else {
+        if (x.key === "Enter") {
+            blockDictionary = true
+            resetGame()
+        }
     }
-    }
-    } else {
-    if (x.key === "Enter") {
-        blockDictionary = true
-        resetGame()
-    }
-}
 })
 window.addEventListener("keyup", (x) => {
     if ( x.key === "Enter" ) {
@@ -444,16 +463,15 @@ function resetGame() {
 
 function checkGuess() {
     let thisGuess = inputArr.join("")
-    
     if (gameActive) {
-    if (answerCount !== gameType) {
-        showMessage("Not enough letters")
-    } else if ( !gameArr.includes(thisGuess) ) {
-        showMessage("Word not in list")
-    } else {
-        greenCheck()
+        if (answerCount !== gameType) {
+            showMessage("Not enough letters")
+        } else if ( !gameArr.includes(thisGuess) ) {
+            showMessage("Word not in list")
+        } else {
+            greenCheck()
+        }
     }
-}
 }
 
 function showMessage(message) {
@@ -513,7 +531,7 @@ function yellowCheck() {
         if (currentAnswer.style.backgroundColor !== "greenyellow" && currentAnswer.style.backgroundColor !== "yellow") {
             currentAnswer.style.backgroundColor = "darkgray"
             allKeys.forEach ( (x) => {
-                if (x.textContent === currentAnswer.textContent && x.style.backgroundColor !== "greenyellow" && x.style.backgroundColor !== "goldenrod") {
+                if (x.textContent === currentAnswer.textContent && x.style.backgroundColor !== "greenyellow" && x.style.backgroundColor !== "yellow") {
                     x.style.backgroundColor = "darkgray"
                 }
             })

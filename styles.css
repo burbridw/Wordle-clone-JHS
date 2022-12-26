@@ -11,7 +11,8 @@ body {
 
 .everything {
     margin: 0 auto;
-    width: 50vw;
+    width: 95vw;
+    max-width: 750px;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -21,19 +22,20 @@ body {
 }
 
 header {
-    width: 45vw;
-    height: 8vh;
-    margin: 0 auto;
+    width: 95vw;
+    max-width: 750px;
+    height: 9vh;
     text-align: left;
     font-size: 1.2rem;
-    border-bottom: 2px double black;
+    display: flex;
 }
-
+.header-text {
+    height: 100%;
+    width: 80%;
+    margin-left: 10px;
+}
 header button {
-    position: relative;
-    left: 30%;
-    top: 5%;
-    height: 50%;
+    height: 100%;
     width: 20%;
     font-size: 1.2rem;
     font-weight: bold;
@@ -41,6 +43,7 @@ header button {
     border-radius: 5px;
     box-shadow: 1px 0 5px 1px black;
     background-color: white;
+    margin-right: 10px;
 }
 header button:hover {
     background-color: yellow;
@@ -49,6 +52,7 @@ header button:hover {
 }
 
 header span {
+    margin-left: 15px;
     font-size: 0.8rem;
     font-style: italic;
 }
@@ -116,14 +120,13 @@ header span {
     transition: all 0.5s linear;
 }
 
-
 .reset-box {
     position: absolute;
     border: 2px solid black;
     background-color: rgb(243, 243, 231);;
     font-size: 2rem;
-    width: 30%;
-    height: 40vh;
+    width: 350px;
+    height: 200px;
     top: 20%;
     left: 50%;
     transform: translateX(-50%);
@@ -133,16 +136,20 @@ header span {
     box-shadow: 1px 2px 2px dimgray;
 }
 
+.reset-button-box {
+    height: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 10%;
+}
+
 .reset-box button {
-    height: 3rem;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
+    height: 90%;
     background-color: palegreen;
     box-shadow: 0 0 1px 1px black;
     border-radius: 10px;
-    font-size: 2rem;
-    margin-top: 15px;
+    font-size: 1.5rem;
 }
 .reset-box div {
     width: 100%;
@@ -154,7 +161,11 @@ header span {
 #change-btn {
     display: block;
 }
+#end-message {
+    height: 50%;
+}
 #end-image {
+    height: 30%;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -168,11 +179,11 @@ header span {
 .upper-container {
     width: 100%;
     height: 60vh;
-    max-height: 380px;
     margin-top: auto;
     margin-bottom: auto;
     display: flex;
     justify-content: center;
+    border-top: 2px solid black;
 }
 .lower-container {
     width: 100%;
@@ -185,7 +196,8 @@ header span {
     display: flex;
     justify-content: center;
     flex-wrap: nowrap;
-    width: 510px;
+    width: 100%;
+    max-width: 700px;
     height: 100%;
 }
 
@@ -238,7 +250,6 @@ header span {
 .answer-box-container {
     width: 50vw;
     height: 100%;
-    max-height: 410px;
     justify-content: center;
     gap: 1px;
     
@@ -246,7 +257,6 @@ header span {
 .answer-image-container {
     width: 120px;
     height: 100%;
-    max-height: 410px;
     margin-left: 20px;
     display: flex;
     flex-wrap: wrap;
@@ -255,15 +265,15 @@ header span {
 }
 .answer-input {
     width: 100%;
-    height: 60px;
+    height: 9vh;
     display: grid;
     grid-template-columns: repeat(6,1fr);
     margin-bottom: 3px;
 }
 
 .answer-box {
-    height: 60px;
-    width: 90%;
+    height: 9vh;
+    width: 11vh;
     box-shadow: 1px 1px 2px 1px black;
     border-radius: 5px;
     display: flex;
@@ -271,27 +281,25 @@ header span {
     justify-content: center;
     align-items: center;
     font-size: 30px;
-    transition: all 0.5s linear;
+    transition: all 0.3s linear;
 }
-
-
 .keyboard {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 50vw;
+    width: 100%;
+    max-width: 750px;
     height: 100%;
     justify-content: center;
     gap: 4px;
     text-align: center;
     margin-top: 3px;
 }
-
 .key {
     width: 9%;
-    height: 30%;
+    height: 9vh;
     font-size: 30px;
-    border-radius: 15%;
+    border-radius: 10px;
     border: none;
     box-shadow: 1px 1px 2px 1px black;
     transition: all 0.1s linear;
@@ -299,15 +307,19 @@ header span {
 }
 .actionkey {
     width: 13%;
-    height: 30%;
+    height: 9vh;
     font-size: 20px;
-    border-radius: 15%;
+    border-radius: 10px;
     border: none;
     box-shadow: 1px 1px 2px 1px black;
     text-align: center;
     transition: all 0.1s linear;
     background-color: lightgreen;
-    
+}
+@media (max-height: 400px) {
+    .key {
+        font-size: 15px;
+    }
 }
 .hide-me {
     display: none;
@@ -315,66 +327,6 @@ header span {
 
 .go-transparent {
     opacity: 50%;
-}
-
-@media (max-width:800px) {
-    .everything {
-        width: 360px;
-    }
-    .dictionary {
-    width: 360px;
-    height: 500px;
-    }
-    .dictionary-image {
-        max-width: 90px;
-        height: 30px;
-        font-size: 1rem;
-    }
-    .dictionary-image img {
-        height: 25px;
-        width: 35px;
-    }
-    header {
-        width: 350px;
-    }
-    header button {
-        left: 20%;
-    }
-    .reset-box {
-        width: 300px;
-    }
-    .answer-box-container {
-        width: 280px;
-    }
-    .upper-container {
-        max-height: 360px;
-    }
-    .lower-container {
-        margin-bottom: 0;
-        height: 160px;
-    }
-    .keyboard {
-        width: 350px;
-        margin-top: 2px;
-        gap: 3px;
-    }
-    .key {
-        font-size: 24px;
-    }
-    .answer-image-container {
-        width: 80px;
-        margin-left: 5px;
-    }
-}
-@media (min-width: 1200px) {
-    .dictionary {
-        width: 1180px;
-    }
-}
-@media (min-width: 1600px) {
-    .dictionary {
-        width: 1550px;
-    }
 }
 .dictionary-close {
     height: 0px;
