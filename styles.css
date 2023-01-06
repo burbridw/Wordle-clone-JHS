@@ -206,8 +206,8 @@ header span {
     top:35%;
     left:50%;
     transform: translate(-50%,-50%);
-    height: 40vh;
-    width: 80vw;
+    height: 40vmin;
+    width: 80vmin;
     max-width: 700px;
     box-shadow: 2px 2px 1px 2px black;
     background-color: lightblue;
